@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Link } from 'react-router-dom'
 
 import { MEDIA } from 'const'
 import { depositApi } from 'api'
@@ -212,7 +211,7 @@ const LinkWrapper = styled(EtherscanLink)`
 `
 
 const VerifiedText = 'View verified contract'
-const APP_NAME_ABOUT = CONFIG.name.length < 5 ? ' ' + CONFIG.name : ''
+// const APP_NAME_ABOUT = CONFIG.name.length < 5 ? ' ' + CONFIG.name : ''
 
 const Footer: React.FC = () => {
   const { networkIdOrDefault: networkId } = useWalletConnection()
@@ -233,8 +232,12 @@ const Footer: React.FC = () => {
         <ThemeToggler />
         {/* LINKS */}
         <FooterLinks>
-          <Link to="/about">About{APP_NAME_ABOUT}</Link>
-          <Link to="/faq">FAQ</Link>
+          <a target="_blank" rel="noopener noreferrer" href="https://cryptolocally.com/en/blog/giv-whitepaper">
+            About
+          </a>
+          <a target="_blank" rel="noopener noreferrer" href="https://cryptolocally.com/en/faq">
+            FAQ
+          </a>
         </FooterLinks>
         {/* VERSION */}
         <div className="version">

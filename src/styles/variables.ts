@@ -2,7 +2,7 @@ import { css } from 'styled-components'
 
 const AllColors = `
   // FONTS
-  --font-default: "Inter", "Helvetica Neue", Helvetica, sans-serif;
+  --font-default: 'Lato', sans-serif;
   --font-mono: "Roboto Mono", monospace;
   --font-arial: Arial, Helvetica, sans-serif;
   --font-weight-normal: 400;
@@ -14,8 +14,8 @@ const AllColors = `
 const LightColors = `
   // Background
   --color-background-lighter: #f7f7f7;
-  --color-background-darker: #EDF2F7;
-  --color-background: #EDF2F7;
+  --color-background-darker: #f8faff;
+  --color-background: #f8faff;
   --color-background-pageWrapper: #fff;
   --color-background-actionCards: #bbfdbb;
   --color-background-highlighted: #fcfde0;
@@ -27,20 +27,20 @@ const LightColors = `
   --color-background-input-lighter: #ffffff;
   --color-background-validation-warning: #fff0eb;
   --color-background-row-hover: #deeeff;
-  --color-background-CTA: #218DFF;
-  --color-background-selection: #218DFF;
-  --color-background-button-hover: #0B66C6;
+  --color-background-CTA: #7f7fd5;
+  --color-background-selection: #7f7fd5;
+  --color-background-button-hover: #45458A;
   --color-background-button-disabled-hover: #2772c3;
-  --color-background-balance-button-hover: #218DFF;
+  --color-background-balance-button-hover: #7f7fd5;
 
   // Borders
   --color-border: transparent;
 
   // Text
-  --color-text-primary: #456483;
+  --color-text-primary: #34495e;
   --color-text-secondary: #9FB4C9;
-  --color-text-active: #218DFF;
-  --color-text-alternate: #456483;
+  --color-text-active: #7f7fd5;
+  --color-text-alternate: #34495e;
   --color-text-CTA: #fff;
   --color-text-selection: #fff;
   --color-text-button-hover: #fff;
@@ -70,7 +70,7 @@ const LightColors = `
   --shadow-color: #00000047;
 
   // States
-  --color-error: red;
+  --color-error: #fc1b28;
   --color-text-deleteOrders: #a71409;
   --color-background-deleteOrders: #ffd6d6;
 `
@@ -92,19 +92,19 @@ const DarkColors = `
   --color-background-row-hover: #09233e;
   --color-background-CTA: #2e2e2e;
   --color-background-selection: #181a1b;
-  --color-background-button-hover: #0B66C6;
+  --color-background-button-hover: #45458A;
   --color-background-button-disabled-hover: #2772c3;
-  --color-background-balance-button-hover: #0B66C6;
+  --color-background-balance-button-hover: #45458A;
 
   // Borders
   --color-border: #262626;
 
   // Text
-  --color-text-primary: #a1c3e4;
+  --color-text-primary: #fff;
   --color-text-secondary: #545454;
-  --color-text-active: #218DFF;
-  --color-text-CTA: #218DFF;
-  --color-text-selection: #218DFF;
+  --color-text-active: #7f7fd5;
+  --color-text-CTA: #7f7fd5;
+  --color-text-selection: #7f7fd5;
   --color-text-button-hover: #e9e9f0;
 
   // Buttons
@@ -113,7 +113,7 @@ const DarkColors = `
   --color-button-disabled: #3d4043;
   --color-button-danger: #9c1818;
   --color-button-secondary: #696969;
-  --color-modali-close: #218DFF;
+  --color-modali-close: #7f7fd5;
 
   // Components
   --color-background-banner: #252729;
@@ -121,15 +121,15 @@ const DarkColors = `
   --color-background-nav-active: #404040;
 
   // SVGs
-  --color-svg-deposit: #218DFF;
+  --color-svg-deposit: #7f7fd5;
   --color-svg-withdraw: #000;
-  --color-svg-switcher: #218DFF;
+  --color-svg-switcher: #fff;
 
   // Shadow
   --shadow-color: #00000047;
 
   // States
-  --color-error: #cd3636;
+  --color-error: #fc1b28;
   --color-text-deleteOrders: #bdb6b5;
   --color-background-deleteOrders: #621b1b;
 `

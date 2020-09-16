@@ -107,7 +107,7 @@ const Wrapper = styled.div`
       justify-content: flex-start;
       font-weight: var(--font-weight-normal);
       font-size: 1.4rem;
-      color: #476481;
+      color: #7f7fd5;
       letter-spacing: -0.03rem;
       position: relative;
       outline: 0;
@@ -129,7 +129,7 @@ const Wrapper = styled.div`
         font-size: 1.2rem;
 
         > b {
-          color: #218dff;
+          color: #7f7fd5;
           cursor: pointer;
           margin: 0 0.4rem;
           min-width: 12rem;
@@ -150,7 +150,7 @@ const Wrapper = styled.div`
     }
 
     > a {
-      color: rgb(33, 141, 255);
+      color: #7f7fd5;
       font-size: 1.2rem;
 
       @media ${MEDIA.xSmallDown} {
