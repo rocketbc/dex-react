@@ -260,7 +260,7 @@ const BalancesDisplay: React.FC<BalanceDisplayProps> = ({
 
   const memoizedSearchFilterParams = useMemo(
     () => ({
-      data: balances,
+      data: balances.filter((t) => ['GIV', 'USDC'].includes(t.symbol || '')),
       filterFnFactory: customFilterFnFactory,
       userConditionalCheck: ({ debouncedSearch }: { debouncedSearch: string }): boolean =>
         !debouncedSearch && localTokens.disabled.size === 0,

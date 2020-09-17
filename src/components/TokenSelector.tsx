@@ -278,7 +278,10 @@ const stopEnterPropagation: React.KeyboardEventHandler<HTMLDivElement> = (e) => 
 
 const TokenSelector: React.FC<Props> = ({ isDisabled, tokens, selected, onChange, tabIndex = 0 }) => {
   const options = useMemo(
-    () => tokens.map((token) => ({ token, value: `${token.symbol} ${token.address}`, label: token.name })),
+    () =>
+      tokens
+        .filter((t) => ['GIV', 'USDC'].includes(t.symbol || ''))
+        .map((token) => ({ token, value: `${token.symbol} ${token.address}`, label: token.name })),
     [tokens],
   )
 
