@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import BN from 'bn.js'
 
 // Utils, const, types
-import { logDebug, getToken } from 'utils'
+import { logDebug, getToken, getAllowedTokens } from 'utils'
 import { checkTokenAgainstSearch } from 'utils/filter'
 import { ZERO, MEDIA } from 'const'
 import { TokenBalanceDetails } from 'types'
@@ -276,7 +276,7 @@ const BalancesDisplay: React.FC<BalanceDisplayProps> = ({
 
   const memoizedZeroFilterParams = useMemo(
     () => ({
-      data: filteredBalances.filter((t) => ['GIV', 'USDC'].includes(t.symbol || '')),
+      data: filteredBalances.filter((t) => getAllowedTokens(t.symbol, t.name, t.address)),
       isSearchFilter: false,
       filterFnFactory: (): typeof customHideZeroFilterFn => customHideZeroFilterFn,
     }),
