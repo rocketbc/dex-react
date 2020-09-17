@@ -21,7 +21,7 @@ templatePath: './src/html/index.html'
 
 # Whitelisted tokens from Gnosis Contract retrieved from a smart contract
 tcr:
-  type: 'none' # choices: multi-tcr | none
+  type: 'multi-tcr' # choices: multi-tcr | none
   config:
     lists:
       - networkId: 1

@@ -61,14 +61,14 @@ const navigation = [
   //   withPastLocation: true,
   // },
   {
-    label: 'Orders',
-    to: '/orders',
+    label: 'Balances',
+    to: '/wallet',
     order: 2,
     withPastLocation: true,
   },
   {
-    label: 'Balances',
-    to: '/wallet',
+    label: 'Orders',
+    to: '/orders',
     order: 3,
     withPastLocation: true,
   },
