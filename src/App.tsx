@@ -108,10 +108,7 @@ const Router: typeof BrowserRouter & typeof HashRouter = (window as any).IS_IPFS
 
 function getInitialUrl(): string {
   assertNonNull(CONFIG.initialTokenSelection, 'initialTokenSelection config is required')
-  const { sellToken: initialSellToken, receiveToken: initialReceiveToken } = CONFIG.initialTokenSelection
-  assertNonNull(initialSellToken, 'sellToken is required in the initialTokenSelection config')
-  assertNonNull(initialReceiveToken, 'receiveToken is required in the initialTokenSelection config')
-  return '/trade/' + encodeSymbol(initialSellToken) + '-' + encodeSymbol(initialReceiveToken) + '?sell=0&price=0'
+  return '/trade/' + encodeSymbol('GIV') + '-' + encodeSymbol('USDC') + '?sell=0&price=0'
 }
 
 const initialUrl = getInitialUrl()
