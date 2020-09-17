@@ -8,9 +8,7 @@ export const getAllowedTokens = (symbol = '', name = '', address = ''): boolean 
     '0x4DBCdF9B62e891a7cec5A2568C3F4FAF9E8Abe2b',
   ]
 
-  console.log(symbol)
-  console.log(name)
-  console.log(address)
+  console.log(symbol, name, address)
 
   return allowedSymbols.includes(symbol) || allowedNames.includes(name) || allowedContractAddresses.includes(address)
 }
