@@ -253,11 +253,11 @@ const Status: React.FC<Pick<Props, 'order' | 'isOverBalance' | 'transactionHash'
         'Expired'
       ) : isActiveNextBatch ? (
         <>
-          {`Active in: `} <StatusCountdown />
+          {`Submitting in: `} <StatusCountdown />
         </>
       ) : isFirstActiveBatch ? (
         <>
-          {`Pending solver submission: `} <StatusCountdown timeoutDelta={60} />
+          {`Order being considered: `} <StatusCountdown timeoutDelta={60} />
         </>
       ) : isScheduled ? (
         <>
