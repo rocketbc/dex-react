@@ -3,7 +3,7 @@ import { SubscriptionCallback } from 'api/tokenList/Subscriptions'
 import { ExchangeApi } from 'api/exchange/ExchangeApi'
 import { TcrApi } from 'api/tcr/TcrApi'
 import { TokenDetails, Command } from 'types'
-import { logDebug, retry } from 'utils'
+import { logDebug, retry, getAllowedTokens } from 'utils'
 
 import { TokenFromErc20Params, TokenFromErc20 } from './'
 
@@ -233,7 +233,13 @@ export function getTokensFactory(factoryParams: {
       logDebug(`[tokenListFactory][${networkId}] Will update tokens for network`)
       updateTokens(networkId)
     }
-    return tokenListApi.getTokens(networkId)
+    return tokenListApi
+      .getTokens(networkId)
+      .filter((t) => getAllowedTokens(t.symbol, t.name, t.address))
+      .map((t) => ({
+        ...t,
+        image: t.symbol === 'GIV' ? '/src/assets/img/logo.svg' : t.image,
+      }))
   }
 }
 

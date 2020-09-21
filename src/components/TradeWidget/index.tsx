@@ -135,6 +135,12 @@ const TradeWidget: React.FC = () => {
       ? tokenList
       : tokenListApi.getTokens(networkIdOrDefault)
 
+  const givToken = tokens.find((t) => t.symbol === 'GIV')
+
+  if (givToken) {
+    givToken.image = '/src/assets/img/logo.svg'
+  }
+
   // Listen on manual changes to URL search query
   const { sell: encodedSellTokenSymbol, buy: decodeReceiveTokenSymbol } = useParams()
   const sellTokenSymbol = decodeSymbol(encodedSellTokenSymbol || '')
