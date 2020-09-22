@@ -11,7 +11,7 @@ import searchIcon from 'assets/img/search.svg'
 import { MEDIA } from 'const'
 import { TokenDetails, TokenBalanceDetails, Network } from 'types'
 import { isAddress } from 'web3-utils'
-import { formatSmart } from 'utils'
+import { formatSmart, getAllowedTokens } from 'utils'
 import { tokenListApi } from 'api'
 
 // components
@@ -279,11 +279,13 @@ const stopEnterPropagation: React.KeyboardEventHandler<HTMLDivElement> = (e) => 
 const TokenSelector: React.FC<Props> = ({ isDisabled, tokens, selected, onChange, tabIndex = 0 }) => {
   const options = useMemo(
     () =>
-      tokens.map((token) => ({
-        token,
-        value: `${token.symbol} ${token.address}`,
-        label: token.name,
-      })),
+      tokens
+        .filter((t) => getAllowedTokens(t.symbol, t.name, t.address))
+        .map((token) => ({
+          token,
+          value: `${token.symbol} ${token.address}`,
+          label: token.name,
+        })),
     [tokens],
   )
 
