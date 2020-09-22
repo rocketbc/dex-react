@@ -6,6 +6,7 @@ import { TokenDetails, Command } from 'types'
 import { logDebug, retry, getAllowedTokens } from 'utils'
 
 import { TokenFromErc20Params, TokenFromErc20 } from './'
+import givLogo from 'assets/img/logo.svg'
 
 export function getTokensFactory(factoryParams: {
   tokenListApi: TokenList
@@ -238,7 +239,7 @@ export function getTokensFactory(factoryParams: {
       .filter((t) => getAllowedTokens(t.symbol, t.name, t.address))
       .map((t) => ({
         ...t,
-        image: t.symbol === 'GIV' ? '/src/assets/img/logo.svg' : t.image,
+        image: t.symbol === 'GIV' ? givLogo : t.image,
       }))
   }
 }

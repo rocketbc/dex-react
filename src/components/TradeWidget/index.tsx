@@ -73,6 +73,8 @@ import { updateTradeState } from 'reducers-actions/trade'
 import validationSchema from 'components/TradeWidget/validationSchema'
 import { TxMessage } from 'components/TradeWidget/TxMessage'
 
+import givLogo from 'assets/img/logo.svg'
+
 const NULL_BALANCE_TOKEN = {
   exchangeBalance: ZERO,
   totalExchangeBalance: ZERO,
@@ -138,7 +140,7 @@ const TradeWidget: React.FC = () => {
   const givToken = tokens.find((t) => t.symbol === 'GIV')
 
   if (givToken) {
-    givToken.image = '/src/assets/img/logo.svg'
+    givToken.image = givLogo
   }
 
   // Listen on manual changes to URL search query
