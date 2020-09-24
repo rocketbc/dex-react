@@ -24,9 +24,15 @@ export interface Props {
 
 export const SwapPrice: React.FC<Props> = ({ baseToken, quoteToken, isPriceInverted, onSwapPrices, forLimitPrice }) => {
   const displayQuoteToken = isPriceInverted ? baseToken : quoteToken
-  const displayBaseToken = isPriceInverted ? quoteToken : baseToken
   const quoteTokenName = displayTokenSymbolOrLink(displayQuoteToken)
-  const baseTokenName = displayTokenSymbolOrLink(displayBaseToken)
+
+  let displayBaseToken
+  let baseTokenName
+
+  if (forLimitPrice) {
+    displayBaseToken = isPriceInverted ? quoteToken : baseToken
+    baseTokenName = displayTokenSymbolOrLink(displayBaseToken)
+  }
 
   return (
     <SwapPriceWrapper onClick={onSwapPrices}>
