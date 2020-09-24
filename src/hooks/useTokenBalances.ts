@@ -13,6 +13,8 @@ import { WalletInfo } from 'api/wallet/WalletApi'
 import { PendingFlux } from 'api/deposit/DepositApi'
 import { useTokenList, UseTokenListParams } from './useTokenList'
 
+import givLogo from 'assets/img/logo.svg'
+
 interface UseBalanceResult {
   balances: TokenBalanceDetails[]
   tokens: TokenDetails[]
@@ -125,6 +127,11 @@ export const useTokenBalances = (passOnParams: Partial<UseTokenListParams> = {})
             '[useTokenBalances] Wallet balances',
             balances ? balances.map((b) => formatSmart(b.walletBalance, b.decimals)) : null,
           )
+          const givBalance = balances.find((t) => t.symbol === 'GIV')
+
+          if (givBalance) {
+            givBalance.image = givLogo
+          }
           setBalances(balances)
           setError(false)
         })
@@ -133,7 +140,7 @@ export const useTokenBalances = (passOnParams: Partial<UseTokenListParams> = {})
           setError(true)
         })
     }
-  }, [setBalances, setError, walletInfo, tokens])
+  }, [setBalances, setError, walletInfo])
 
   return { balances, error, tokens }
 }
