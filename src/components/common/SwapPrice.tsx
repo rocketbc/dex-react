@@ -19,15 +19,20 @@ export interface Props {
   quoteToken: TokenDetails
   isPriceInverted: boolean
   onSwapPrices: () => void
+  forLimitPrice?: boolean
 }
 
-export const SwapPrice: React.FC<Props> = ({ baseToken, quoteToken, isPriceInverted, onSwapPrices }) => {
+export const SwapPrice: React.FC<Props> = ({ baseToken, quoteToken, isPriceInverted, onSwapPrices, forLimitPrice }) => {
   const displayQuoteToken = isPriceInverted ? baseToken : quoteToken
+  const displayBaseToken = isPriceInverted ? quoteToken : baseToken
   const quoteTokenName = displayTokenSymbolOrLink(displayQuoteToken)
+  const baseTokenName = displayTokenSymbolOrLink(displayBaseToken)
 
   return (
     <SwapPriceWrapper onClick={onSwapPrices}>
-      <EllipsisText title={safeTokenName(displayQuoteToken)}>{quoteTokenName}</EllipsisText>
+      <EllipsisText $maxWidth={forLimitPrice ? '12ch' : '6ch'} title={safeTokenName(displayQuoteToken)}>
+        {forLimitPrice ? `${quoteTokenName} per ${baseTokenName}` : quoteTokenName}
+      </EllipsisText>
       <SwapIcon />
     </SwapPriceWrapper>
   )

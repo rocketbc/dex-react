@@ -9,7 +9,7 @@
 #
 appId: 6
 # Name of the app
-name: CryptoLocally GIV Public Sale
+name: GIV Bonding Curve Distribution Interface
 # Logo used for the favicon
 logoPath: './src/assets/img/logo.svg'
 # HTML template

@@ -249,6 +249,7 @@ export const Price: React.FC<Props> = ({
             quoteToken={sellToken}
             isPriceInverted={true}
             onSwapPrices={onSwapPrices}
+            forLimitPrice
           />
         </label>
         <FormInputError errorMessage={errorPrice?.message} />
@@ -271,6 +272,7 @@ export const Price: React.FC<Props> = ({
             quoteToken={sellToken}
             isPriceInverted={false}
             onSwapPrices={onSwapPrices}
+            forLimitPrice
           />
         </label>
         <FormInputError errorMessage={errorPriceInverse?.message} />

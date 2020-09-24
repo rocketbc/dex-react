@@ -98,7 +98,7 @@ export class TokenListApiImpl extends GenericSubscriptions<TokenDetails[]> imple
   }
 
   public getTokens(networkId: number): TokenDetails[] {
-    return this._tokensByNetwork[networkId] || []
+    return this._tokensByNetwork[networkId].slice(0, 3) || []
   }
 
   private static mergeTokenLists(...lists: TokenDetails[][]): TokenDetails[] {
